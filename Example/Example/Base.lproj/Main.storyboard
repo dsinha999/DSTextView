@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jLG-Du-E5u">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Delegate-->
+        <scene sceneID="O8k-Yz-INg">
+            <objects>
+                <viewController id="jLG-Du-E5u" customClass="ViewController" customModule="DSTextViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4j1-dL-0GV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVQ-iS-myr" customClass="DSTextView" customModule="DSTextView">
+                                <rect key="frame" x="16" y="298" width="382" height="100"/>
+                                <color key="backgroundColor" red="0.92985275889796948" green="0.92985275889796948" blue="0.92985275889796948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="1Da-eD-qmt"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Write Something..."/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.46988023480000002" green="0.46988023480000002" blue="0.46988023480000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="jLG-Du-E5u" id="d8b-ic-r3y"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kL-d1-Eci">
+                                <rect key="frame" x="16" y="438" width="183" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="zgi-S6-9Gn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Resign First Responder"/>
+                                <connections>
+                                    <action selector="resignAction:" destination="jLG-Du-E5u" eventType="touchUpInside" id="6MK-e5-0Pb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgK-1e-1NP">
+                                <rect key="frame" x="215" y="438" width="183" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="epp-45-fkC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Become First Responder"/>
+                                <connections>
+                                    <action selector="bocomeAction:" destination="jLG-Du-E5u" eventType="touchUpInside" id="trl-j7-weo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DSTextView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2o-Sz-d27">
+                                <rect key="frame" x="95" y="210" width="224" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BgK-1e-1NP" firstAttribute="top" secondItem="tVQ-iS-myr" secondAttribute="bottom" constant="40" id="0si-44-XNs"/>
+                            <constraint firstItem="5kL-d1-Eci" firstAttribute="top" secondItem="tVQ-iS-myr" secondAttribute="bottom" constant="40" id="3Vw-bA-L2V"/>
+                            <constraint firstItem="xsx-yK-A9a" firstAttribute="trailing" secondItem="tVQ-iS-myr" secondAttribute="trailing" constant="16" id="5nb-FU-JHK"/>
+                            <constraint firstItem="BgK-1e-1NP" firstAttribute="leading" secondItem="5kL-d1-Eci" secondAttribute="trailing" constant="16" id="7WT-Lc-nMd"/>
+                            <constraint firstItem="tVQ-iS-myr" firstAttribute="centerY" secondItem="4j1-dL-0GV" secondAttribute="centerY" constant="-100" id="9Cu-30-26Y"/>
+                            <constraint firstItem="xsx-yK-A9a" firstAttribute="trailing" secondItem="BgK-1e-1NP" secondAttribute="trailing" constant="16" id="FHB-v4-19Q"/>
+                            <constraint firstItem="5kL-d1-Eci" firstAttribute="leading" secondItem="xsx-yK-A9a" secondAttribute="leading" constant="16" id="Jmp-1q-Cvg"/>
+                            <constraint firstItem="tVQ-iS-myr" firstAttribute="leading" secondItem="xsx-yK-A9a" secondAttribute="leading" constant="16" id="Y3W-yp-RP6"/>
+                            <constraint firstItem="tVQ-iS-myr" firstAttribute="top" secondItem="M2o-Sz-d27" secondAttribute="bottom" constant="40" id="juF-jm-dlC"/>
+                            <constraint firstItem="tVQ-iS-myr" firstAttribute="centerX" secondItem="4j1-dL-0GV" secondAttribute="centerX" id="meh-Ga-jPb"/>
+                            <constraint firstItem="BgK-1e-1NP" firstAttribute="width" secondItem="5kL-d1-Eci" secondAttribute="width" id="oAx-Ni-VAo"/>
+                            <constraint firstItem="M2o-Sz-d27" firstAttribute="centerX" secondItem="4j1-dL-0GV" secondAttribute="centerX" id="rtY-AY-eiv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xsx-yK-A9a"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="tVQ-iS-myr" id="nkB-by-vli"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rXL-sv-tRr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-248" y="-33"/>
+        </scene>
+    </scenes>
+</document>

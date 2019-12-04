@@ -1,0 +1,16 @@
+PODS:
+  - DSTextView (1.0.0)
+
+DEPENDENCIES:
+  - DSTextView (from `../DSTextView/`)
+
+EXTERNAL SOURCES:
+  DSTextView:
+    :path: "../DSTextView/"
+
+SPEC CHECKSUMS:
+  DSTextView: 8707a7c88feb2d0f8fa9f33485be1b5d157790ab
+
+PODFILE CHECKSUM: 15228adf605fe246fdc404a78e6f755b2e62e3ea
+
+COCOAPODS: 1.8.4

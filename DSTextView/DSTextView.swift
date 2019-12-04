@@ -8,8 +8,7 @@
 
 import UIKit
 
-
-@objc protocol DSTextViewDelegate: class {
+@objc public protocol DSTextViewDelegate: class {
     func dsTextViewDidChange(_ textView: UITextView)
     func dsTextViewDidEndEditing(_ textView: UITextView)
     func dsTextViewDidBeginEditing(_ textView: UITextView)
@@ -23,7 +22,7 @@ extension DSTextViewDelegate {
     func dsTextViewCharactersCount(_ count: Int) {}
 }
 
-@IBDesignable class DSTextView: UIView {
+@IBDesignable public class DSTextView: UIView {
     
     public var padding: CGFloat = 12
     public var font: UIFont = UIFont.systemFont(ofSize: 15)
@@ -34,7 +33,7 @@ extension DSTextViewDelegate {
     public var keyboardType: UIKeyboardType = .default
     public var showDoneButton: Bool = true
     
-    @IBOutlet weak var delegate: DSTextViewDelegate?
+    @IBOutlet public weak var delegate: DSTextViewDelegate?
     
     // MARK: - Private Variables -
     private let textView = UITextView()
@@ -51,23 +50,23 @@ extension DSTextViewDelegate {
         return toolbar
     }()
     
-     @IBInspectable public var placeholder: String? {
-            get {
-                return self.placeholderLabel.text
-            }
-            set {
-                self.placeholderLabel.text = newValue
-            }
+    @IBInspectable public var placeholder: String? {
+        get {
+            return self.placeholderLabel.text
         }
+        set {
+            self.placeholderLabel.text = newValue
+        }
+    }
     
     @IBInspectable public var placeholderColor: UIColor? {
-               get {
-                   return self.placeholderLabel.textColor
-               }
-               set {
-                   self.placeholderLabel.textColor = newValue
-               }
-           }
+        get {
+            return self.placeholderLabel.textColor
+        }
+        set {
+            self.placeholderLabel.textColor = newValue
+        }
+    }
     
     
     @IBInspectable public var textColor: UIColor? {
@@ -86,13 +85,18 @@ extension DSTextViewDelegate {
         super.init(frame: frame)
         addViewLayoutSubViews()
         refreshViewLayout()
-        
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    
+    public override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
         addViewLayoutSubViews()
         refreshViewLayout()
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        addViewLayoutSubViews()
     }
     
     override open func draw(_ rect: CGRect) {
@@ -100,7 +104,7 @@ extension DSTextViewDelegate {
         refreshViewLayout()
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         refreshViewLayout()
     }
@@ -128,6 +132,8 @@ extension DSTextViewDelegate {
     
     private func addViewLayoutSubViews() {
         // add subViews
+        self.textView.removeFromSuperview()
+        self.placeholderLabel.removeFromSuperview()
         self.addSubview(self.textView)
         self.addSubview(placeholderLabel)
         
@@ -156,7 +162,7 @@ extension DSTextViewDelegate {
     public func removeFirstResponder() {
         self.textView.resignFirstResponder()
     }
-
+    
     public func makeFirstResponder() {
         self.textView.becomeFirstResponder()
     }
@@ -166,7 +172,7 @@ extension DSTextViewDelegate {
 
 extension DSTextView: UITextViewDelegate {
     
-    func textViewDidChange(_ textView: UITextView) {
+    public func textViewDidChange(_ textView: UITextView) {
         
         if (textView.text ?? "").count > 0 {
             self.placeholderLabel.alpha = 0
@@ -177,7 +183,7 @@ extension DSTextView: UITextViewDelegate {
         self.delegate?.dsTextViewDidChange(textView)
     }
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         if !text.canBeConverted(to: .ascii), emojiAllowed == false {
             return false
@@ -186,7 +192,7 @@ extension DSTextView: UITextViewDelegate {
         return textView.text.count + (text.count - range.length) <= maxLength;
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
+    public func textViewDidEndEditing(_ textView: UITextView) {
         
         if (textView.text ?? "").count > 0 {
             self.placeholderLabel.alpha = 0
@@ -197,7 +203,7 @@ extension DSTextView: UITextViewDelegate {
         self.delegate?.dsTextViewDidEndEditing(textView)
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
+    public func textViewDidBeginEditing(_ textView: UITextView) {
         
         if (textView.text ?? "").count > 0 {
             self.placeholderLabel.alpha = 0
@@ -208,10 +214,10 @@ extension DSTextView: UITextViewDelegate {
         self.delegate?.dsTextViewDidBeginEditing(textView)
     }
     
-    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+    public func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         return self.editingAllowed
     }
-
+    
     
 }
 

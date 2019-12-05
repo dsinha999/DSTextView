@@ -1,6 +1,0 @@
-framework module DSTextView {
-  umbrella header "DSTextView-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -5,7 +5,7 @@
 <br/>
 
 <p align="center" >
-<img src="https://github.com/dsinha999/DSTextView/blob/master/screenshot.jpg?raw=true" alt="DateScrollPicker" title="DSTextView">
+<img src="https://github.com/dsinha999/DSTextView/blob/master/screenshot.png?raw=true" alt="DateScrollPicker" title="DSTextView">
 </p>
 
 # DSTexView

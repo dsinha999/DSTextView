@@ -1,3 +1,5 @@
+# DSTexView
+
 <p align="center">
 <b>DSTextView</b> is to get rid of placeholder and its color issue of UITextView of UIKit in swift 5.1. It privide most of the delegate methods to use TextView and also gives you character count. You can set placeholder from Interface Builder.
 </p>

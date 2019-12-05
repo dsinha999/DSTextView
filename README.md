@@ -10,7 +10,7 @@
 
 <br/>
 
-#Demo Screenshot
+# Demo Screenshot
 
 <p align="center" >
 <img src="https://github.com/dsinha999/DSTextView/blob/master/screenshot.png?raw=true" alt="DSTextView" title="DSTextView">

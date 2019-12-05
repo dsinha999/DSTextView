@@ -13,7 +13,7 @@ Pod::Spec.new do |spec|
   spec.swift_version     = '5.0'
 
 
-# spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
+ spec.screenshots  = "https://github.com/dsinha999/DSTextView/blob/master/screenshot.jpg?raw=true"
 
 
 end

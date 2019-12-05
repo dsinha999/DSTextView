@@ -23,7 +23,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
   - [UIView in your xib / storyboard](#uiviewinyourxib/storyboard)
-  - [Formats](#properties)
+  - [Properties](#properties)
   - [Delegates](#delegates)
 - [Author](#author)
 - [License](#license)
